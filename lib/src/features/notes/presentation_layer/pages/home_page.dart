@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_app_bar.dart';
+import 'package:my_notes/src/features/notes/presentation_layer/widgets/note_card.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -12,9 +13,11 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-          child: const Column(
+          child: Column(
             children: [
-              CustomAppBar(),
+              const CustomAppBar(),
+              SizedBox(height: 20.h,),
+              const NoteCardWidget()
             ],
           ),
         ),
@@ -22,3 +25,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+
