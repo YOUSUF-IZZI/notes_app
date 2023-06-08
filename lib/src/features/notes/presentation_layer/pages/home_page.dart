@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_app_bar.dart';
-import 'package:my_notes/src/features/notes/presentation_layer/widgets/note_card.dart';
+import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_floating_action_button.dart';
+import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_list_view_builder.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -11,36 +12,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        floatingActionButton: const CustomFloatinActionButton(),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
           child: Column(
             children: [
               const CustomAppBar(),
               SizedBox(height: 20.h,),
-              const NoteCardWidget()
+              CustomListViewBuilder(),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class CustomListViewBuilder extends StatelessWidget {
-  CustomListViewBuilder({super.key});
-  final List<Map<String,String>> notesList = [
-    {}
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: 1,
-        padding: EdgeInsets.symmetric(vertical: 8.h),
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (context, index) {
-          return const NoteCardWidget(); 
-        },
       ),
     );
   }
