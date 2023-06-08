@@ -26,4 +26,25 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class CustomListViewBuilder extends StatelessWidget {
+  CustomListViewBuilder({super.key});
+  final List<Map<String,String>> notesList = [
+    {}
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: 1,
+        padding: EdgeInsets.symmetric(vertical: 8.h),
+        physics: const BouncingScrollPhysics(),
+        itemBuilder: (context, index) {
+          return const NoteCardWidget(); 
+        },
+      ),
+    );
+  }
+}
+
+
 
