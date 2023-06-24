@@ -12,7 +12,7 @@ class CustomListViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 4,
+        itemCount: 3,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) {
           return Padding(
