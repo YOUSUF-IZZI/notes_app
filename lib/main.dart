@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:my_notes/src/constants/variables.dart';
 import 'src/features/notes/presentation_layer/pages/home_page.dart';
 
 
-void main() {
-  runApp(MyNotesApp());
+void main() async {
+  await Hive.initFlutter();
+  await Hive.openBox(kNotesBox);
+  runApp(const ProviderScope(child: MyNotesApp()));
 }
 
 class MyNotesApp extends StatelessWidget {
@@ -23,7 +28,6 @@ class MyNotesApp extends StatelessWidget {
               brightness: Brightness.dark,
               fontFamily: 'Poppins'
             ),
-
             home: const HomePage()
         );
       },

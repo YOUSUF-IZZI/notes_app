@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_material_button.dart';
-import 'package:my_notes/src/features/notes/presentation_layer/widgets/custom_text_field.dart';
 
 
 class EditNotePage extends StatelessWidget {
@@ -18,9 +17,9 @@ class EditNotePage extends StatelessWidget {
             children: [
               Text('Edite current note', style: TextStyle(fontSize: 24.sp),),
               SizedBox(height: 30.h,),
-              const CustomTextField(title: 'Title'),
+              //const CustomTextField(title: 'Title'),
               SizedBox(height: 10.h,),
-              const CustomTextField(title: 'Details', maxLines: 4,),
+              //const CustomTextField(title: 'Details', maxLines: 4,),
               SizedBox(height: 20.h,),
               const CustomMaterialButton(buttonName: 'Edit'),
               SizedBox(height: 10.h,)
